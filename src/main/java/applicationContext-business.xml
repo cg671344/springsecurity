@@ -52,9 +52,9 @@
 			value="${jdbc.url}" />
 		<property name="user" value="${jdbc.username}" />
 		<property name="password" value="${jdbc.password}" />
-		<property name="minPoolSize" value="5" />
-		<property name="acquireIncrement" value="5" />
-		<property name="maxPoolSize" value="10" />
+		<property name="minPoolSize" value="1" />
+		<property name="acquireIncrement" value="1" />
+		<property name="maxPoolSize" value="3" />
 	</bean>
 	
 	<!-- Hibernate SessionFactory -->
