@@ -80,6 +80,7 @@
 				<prop key="hibernate.generate_statistics">
 					${hibernate.generate_statistics}
 				</prop>
+				<property name="hbm2ddl.auto">update</property>
 			</props>
 		</property>
 	</bean>
