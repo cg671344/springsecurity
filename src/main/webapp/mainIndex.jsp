@@ -3,7 +3,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=gbk">
-<title>Êı¾İ·ÖÎöÏµÍ³</title>
+<title>æ•°æ®åˆ†æç³»ç»Ÿ</title>
 <%
 	String path = request.getContextPath();
 	String error = request.getParameter("error");
@@ -16,7 +16,7 @@
 
 <style type="text/css">
 body {
-	font: 12px/20px "Î¢ÈíÑÅºÚ", "ËÎÌå", Arial, sans-serif, Verdana, Tahoma;
+	font: 12px/20px "å¾®è½¯é›…é»‘", "å®‹ä½“", Arial, sans-serif, Verdana, Tahoma;
 	padding: 0;
 	margin: 0;
 }
@@ -69,7 +69,7 @@ a:active {
 var error = "<%=error%>";
 function addTab(title, url){
 	if ($('#tabs').tabs('exists', title)){
-		$('#tabs').tabs('select', title);//Ñ¡ÖĞ²¢Ë¢ĞÂ
+		$('#tabs').tabs('select', title);//é€‰ä¸­å¹¶åˆ·æ–°
 		var currTab = $('#tabs').tabs('getSelected');
 		var url = $(currTab.panel('options').content).attr('src');
 		if(url != undefined && currTab.panel('options').title != 'Home') {
@@ -96,12 +96,12 @@ function createFrame(url) {
 }
 		
 function tabClose() {
-	/*Ë«»÷¹Ø±ÕTABÑ¡Ïî¿¨*/
+	/*åŒå‡»å…³é—­TABé€‰é¡¹å¡*/
 	$(".tabs-inner").dblclick(function(){
 		var subtitle = $(this).children(".tabs-closable").text();
 		$('#tabs').tabs('close',subtitle);
 	})
-	/*ÎªÑ¡Ïî¿¨°ó¶¨ÓÒ¼ü*/
+	/*ä¸ºé€‰é¡¹å¡ç»‘å®šå³é”®*/
 	$(".tabs-inner").bind('contextmenu',function(e){
 		$('#mm').menu('show', {
 			left: e.pageX,
@@ -115,9 +115,9 @@ function tabClose() {
 		return false;
 	});
 }		
-//°ó¶¨ÓÒ¼ü²Ëµ¥ÊÂ¼ş
+//ç»‘å®šå³é”®èœå•äº‹ä»¶
 function tabCloseEven() {
-	//Ë¢ĞÂ
+	//åˆ·æ–°
 	$('#mm-tabupdate').click(function(){
 		var currTab = $('#tabs').tabs('getSelected');
 		var url = $(currTab.panel('options').content).attr('src');
@@ -130,12 +130,12 @@ function tabCloseEven() {
 			})
 		}
 	})
-	//¹Ø±Õµ±Ç°
+	//å…³é—­å½“å‰
 	$('#mm-tabclose').click(function(){
 		var currtab_title = $('#mm').data("currtab");
 		$('#tabs').tabs('close',currtab_title);
 	})
-	//È«²¿¹Ø±Õ
+	//å…¨éƒ¨å…³é—­
 	$('#mm-tabcloseall').click(function(){
 		$('.tabs-inner span').each(function(i,n){
 			var t = $(n).text();
@@ -144,7 +144,7 @@ function tabCloseEven() {
 			}
 		});
 	});
-	//¹Ø±Õ³ıµ±Ç°Ö®ÍâµÄTAB
+	//å…³é—­é™¤å½“å‰ä¹‹å¤–çš„TAB
 	$('#mm-tabcloseother').click(function(){
 		var prevall = $('.tabs-selected').prevAll();
 		var nextall = $('.tabs-selected').nextAll();		
@@ -166,12 +166,12 @@ function tabCloseEven() {
 		}
 		return false;
 	});
-	//¹Ø±Õµ±Ç°ÓÒ²àµÄTAB
+	//å…³é—­å½“å‰å³ä¾§çš„TAB
 	$('#mm-tabcloseright').click(function(){
 		var nextall = $('.tabs-selected').nextAll();
 		if(nextall.length==0){
-			//msgShow('ÏµÍ³ÌáÊ¾','ºó±ßÃ»ÓĞÀ²~~','error');
-			alert('ºó±ßÃ»ÓĞÀ²~~');
+			//msgShow('ç³»ç»Ÿæç¤º','åè¾¹æ²¡æœ‰å•¦~~','error');
+			alert('åè¾¹æ²¡æœ‰å•¦~~');
 			return false;
 		}
 		nextall.each(function(i,n){
@@ -180,11 +180,11 @@ function tabCloseEven() {
 		});
 		return false;
 	});
-	//¹Ø±Õµ±Ç°×ó²àµÄTAB
+	//å…³é—­å½“å‰å·¦ä¾§çš„TAB
 	$('#mm-tabcloseleft').click(function(){
 		var prevall = $('.tabs-selected').prevAll();
 		if(prevall.length==0){
-			alert('µ½Í·ÁË£¬Ç°±ßÃ»ÓĞÀ²~~');
+			alert('åˆ°å¤´äº†ï¼Œå‰è¾¹æ²¡æœ‰å•¦~~');
 			return false;
 		}
 		prevall.each(function(i,n){
@@ -194,7 +194,7 @@ function tabCloseEven() {
 		return false;
 	});
 
-	//ÍË³ö
+	//é€€å‡º
 	$("#mm-exit").click(function(){
 		$('#mm').menu('hide');
 	})
@@ -214,10 +214,10 @@ $(function() {
 <body class="easyui-layout">
 		<div id="loginDiv" class="theme-popover">
 			<div class="theme-poptit">
-				<a href="javascript:;" title="¹Ø±Õ" onclick="cancelLoginDiv()"
-					class="close">¡Á</a>
+				<a href="javascript:;" title="å…³é—­" onclick="cancelLoginDiv()"
+					class="close">Ã—</a>
 				<h3>
-					ÇëÊäÈëÓÃ»§ÃûºÍÃÜÂë
+					è¯·è¾“å…¥ç”¨æˆ·åå’Œå¯†ç 
 				</h3>
 			</div>
 			<div class="theme-popbod dform" style="position:relative;z-index:999">
@@ -225,19 +225,19 @@ $(function() {
 					<ol>
 						<li>
 						<div id="loginErrorDiv" class="loginErrorHidden"> 
-						ÓÃ»§Ãû»òÃÜÂë´íÎó
+						ç”¨æˆ·åæˆ–å¯†ç é”™è¯¯
 						</div>
 						<li>
-							<strong>ÓÃ»§Ãû£º</strong>
+							<strong>ç”¨æˆ·åï¼š</strong>
 							<input class="ipt" type="text" name="j_username" value="" size="20" />
 						</li>
 						<li>
-							<strong>ÃÜÂë£º</strong>
+							<strong>å¯†ç ï¼š</strong>
 							<input class="ipt" type="password" name="j_password" value="" size="20" />
 						</li>
 						<li>
 							<input class="btn btn-primary" type="submit" name="submit"
-								value=" µÇ Â¼ " />
+								value=" ç™» å½• " />
 						</li>
 					</ol>
 				</form>
@@ -247,59 +247,59 @@ $(function() {
 		<div class="cs-north-bg">
 			<div class="cs-north-logo">
 				<div style="float:left; padding:15px 0px 0px 5px">
-					<div style="font-size:18px;padding:15px 0px 0px 5px">º¸½ÓºÏ¸ñÂÊ×Ô¶¯Ô¤¾¯ÏµÍ³</div>
-					<div style="font-size:14px;padding:15px 0px 0px 100px">Ò»´Î°ÑÊÂÇé×öºÃ</div>
+					<div style="font-size:18px;padding:15px 0px 0px 5px">ç„Šæ¥åˆæ ¼ç‡è‡ªåŠ¨é¢„è­¦ç³»ç»Ÿ</div>
+					<div style="font-size:14px;padding:15px 0px 0px 100px">ä¸€æ¬¡æŠŠäº‹æƒ…åšå¥½</div>
 				</div>
 				<div style="float:right;font-size:14px;padding:40px 5px 0px 5px">
 					<authz:authorize access="isAuthenticated()">
-						µÇÂ¼ÈË£º
+						ç™»å½•äººï¼š
 						<authz:authentication property="principal.username" />
-						<a class="btn btn-primary btn-large" href="<%=path%>/j_spring_security_logout">ÍË³ö</a>
+						<a class="btn btn-primary btn-large" href="<%=path%>/j_spring_security_logout">é€€å‡º</a>
 					</authz:authorize>
 					<authz:authorize access="!isAuthenticated()">
-						<a class="btn btn-primary btn-large theme-login" href="javascript:;">¹ÜÀíÔ±µÇÂ¼</a>
+						<a class="btn btn-primary btn-large theme-login" href="javascript:;">ç®¡ç†å‘˜ç™»å½•</a>
 					</authz:authorize>
 				</div>
 			</div>
 		</div>
 	</div>
-	<div region="west" border="true" split="true" title="µ¼º½" class="cs-west">
+	<div region="west" border="true" split="true" title="å¯¼èˆª" class="cs-west">
 		<div class="easyui-accordion" fit="true" border="false">
-				<div title="Ò»´ÎºÏ¸ñÂÊÇ÷ÊÆÍ¼">
-					<p><a href="javascript:void(0);" src="<%=path%>/weekAnalystic.do" class="cs-navi-tab">ÖÜÒ»´ÎºÏ¸ñÂÊÇ÷ÊÆÍ¼</a></p>
-					<p><a href="javascript:void(0);" src="<%=path%>/monthAnalystic.do" class="cs-navi-tab">ÔÂ¶ÈÒ»´ÎºÏ¸ñÂÊÇ÷ÊÆÍ¼</a></p>
-					<p><a href="javascript:void(0);" src="<%=path%>/getCumulativedRate.do" class="cs-navi-tab">Äê¶ÈÒ»´ÎÀÛ¼ÆºÏ¸ñÂÊ</a></p>
+				<div title="ä¸€æ¬¡åˆæ ¼ç‡è¶‹åŠ¿å›¾">
+					<p><a href="javascript:void(0);" src="<%=path%>/weekAnalystic.do" class="cs-navi-tab">å‘¨ä¸€æ¬¡åˆæ ¼ç‡è¶‹åŠ¿å›¾</a></p>
+					<p><a href="javascript:void(0);" src="<%=path%>/monthAnalystic.do" class="cs-navi-tab">æœˆåº¦ä¸€æ¬¡åˆæ ¼ç‡è¶‹åŠ¿å›¾</a></p>
+					<p><a href="javascript:void(0);" src="<%=path%>/getCumulativedRate.do" class="cs-navi-tab">å¹´åº¦ä¸€æ¬¡ç´¯è®¡åˆæ ¼ç‡</a></p>
 				</div>
-				<div title="·µĞŞºÏ¸ñÂÊÇ÷ÊÆÍ¼">
-					<p><a href="javascript:void(0);" src="<%=path%>/weekAnalysticSecondRT.do" class="cs-navi-tab">ÖÜ·µĞŞºÏ¸ñÂÊÇ÷ÊÆÍ¼</a></p>
-					<p><a href="javascript:void(0);" src="<%=path%>/monthAnalysticSecondRT.do" class="cs-navi-tab">ÔÂ¶È·µĞŞºÏ¸ñÂÊÇ÷ÊÆÍ¼</a></p>
-					<p><a href="javascript:void(0);" src="<%=path%>/getCumulativedRateSecondRT.do" class="cs-navi-tab">Äê¶È·µĞŞÀÛ¼ÆºÏ¸ñÂÊ</a></p>
+				<div title="è¿”ä¿®åˆæ ¼ç‡è¶‹åŠ¿å›¾">
+					<p><a href="javascript:void(0);" src="<%=path%>/weekAnalysticSecondRT.do" class="cs-navi-tab">å‘¨è¿”ä¿®åˆæ ¼ç‡è¶‹åŠ¿å›¾</a></p>
+					<p><a href="javascript:void(0);" src="<%=path%>/monthAnalysticSecondRT.do" class="cs-navi-tab">æœˆåº¦è¿”ä¿®åˆæ ¼ç‡è¶‹åŠ¿å›¾</a></p>
+					<p><a href="javascript:void(0);" src="<%=path%>/getCumulativedRateSecondRT.do" class="cs-navi-tab">å¹´åº¦è¿”ä¿®ç´¯è®¡åˆæ ¼ç‡</a></p>
 				</div>
-				<div title="ÔğÈÎÇøÊı¾İ·ÖÎö">
-					<p><a href="javascript:void(0);" src="<%=path%>/zoneClassAnalystic.do" class="cs-navi-tab">ÔğÈÎÇøÒ»´ÎºÏ¸ñÂÊ</a></p>
-					<p><a href="javascript:void(0);" src="<%=path%>/zoneClassAnalysticSecondRT.do" class="cs-navi-tab">ÔğÈÎÇø·µĞŞºÏ¸ñÂÊ</a></p>
+				<div title="è´£ä»»åŒºæ•°æ®åˆ†æ">
+					<p><a href="javascript:void(0);" src="<%=path%>/zoneClassAnalystic.do" class="cs-navi-tab">è´£ä»»åŒºä¸€æ¬¡åˆæ ¼ç‡</a></p>
+					<p><a href="javascript:void(0);" src="<%=path%>/zoneClassAnalysticSecondRT.do" class="cs-navi-tab">è´£ä»»åŒºè¿”ä¿®åˆæ ¼ç‡</a></p>
 				</div>
-				<div title="Ï¸»¯ÇøÓòÊı¾İ·ÖÎö">
-					<p><a href="javascript:void(0);" src="<%=path%>/zoneAnalystic.do" class="cs-navi-tab">Ï¸»¯ÇøÓòÒ»´ÎºÏ¸ñÂÊ</a></p>
-					<p><a href="javascript:void(0);" src="<%=path%>/zoneAnalysticSecondRT.do" class="cs-navi-tab">Ï¸»¯ÇøÓò·µĞŞºÏ¸ñÂÊ</a></p>
+				<div title="ç»†åŒ–åŒºåŸŸæ•°æ®åˆ†æ">
+					<p><a href="javascript:void(0);" src="<%=path%>/zoneAnalystic.do" class="cs-navi-tab">ç»†åŒ–åŒºåŸŸä¸€æ¬¡åˆæ ¼ç‡</a></p>
+					<p><a href="javascript:void(0);" src="<%=path%>/zoneAnalysticSecondRT.do" class="cs-navi-tab">ç»†åŒ–åŒºåŸŸè¿”ä¿®åˆæ ¼ç‡</a></p>
 				</div>
-				<div title="º¸½ÓÊı¾İ²éÑ¯">
-					<p><a href="javascript:void(0);" src="<%=path%>/hangongAnalystic.do" class="cs-navi-tab">º¸¹¤Ò»´ÎºÏ¸ñÊı¾İ²éÑ¯</a></p>
-					<p><a href="javascript:void(0);" src="<%=path%>/hangongAnalysticSecondRT.do" class="cs-navi-tab">º¸¹¤·µĞŞºÏ¸ñÊı¾İ²éÑ¯</a></p>
-					<p><a href="javascript:void(0);" src="<%=path%>/hangongChartNoQuery.do" class="cs-navi-tab">µÈÖáÍ¼ºÅÓëº¸¿ÚºÅ²éÑ¯</a></p>
+				<div title="ç„Šæ¥æ•°æ®æŸ¥è¯¢">
+					<p><a href="javascript:void(0);" src="<%=path%>/hangongAnalystic.do" class="cs-navi-tab">ç„Šå·¥ä¸€æ¬¡åˆæ ¼æ•°æ®æŸ¥è¯¢</a></p>
+					<p><a href="javascript:void(0);" src="<%=path%>/hangongAnalysticSecondRT.do" class="cs-navi-tab">ç„Šå·¥è¿”ä¿®åˆæ ¼æ•°æ®æŸ¥è¯¢</a></p>
+					<p><a href="javascript:void(0);" src="<%=path%>/hangongChartNoQuery.do" class="cs-navi-tab">ç­‰è½´å›¾å·ä¸ç„Šå£å·æŸ¥è¯¢</a></p>
 				</div>
 				<authz:authorize access="hasRole('supervisor')">
-					<div title="º¸½ÓÊı¾İ¹ÜÀí">
-						<p><a href="javascript:void(0);" src="<%=path%>/listRecords.do" class="cs-navi-tab">Ô´Êı¾İÊ±¼ä¶Î²éÑ¯</a></p>
-						<p><a href="javascript:void(0);" src="<%=path%>/hangongChartNoQueryForAdmin.do" class="cs-navi-tab">Ô´Êı¾İµÈÖáÍ¼ºÅ²éÑ¯</a></p>
-						<p><a href="javascript:void(0);" src="<%=path%>/file/uploadingFile.do" class="cs-navi-tab">º¸½ÓÊı¾İÎÄ¼şÉÏ´«</a></p>
-						<p><a href="javascript:void(0);" src="<%=path%>/file/uploadingHangongFile.do" class="cs-navi-tab">º¸¹¤ĞÅÏ¢ÎÄ¼şÉÏ´«</a></p>
-						<p><a href="javascript:void(0);" src="<%=path%>/setting/alertLimitSetting.do" class="cs-navi-tab">²ÎÊıÉè¶¨</a></p>
+					<div title="ç„Šæ¥æ•°æ®ç®¡ç†">
+						<p><a href="javascript:void(0);" src="<%=path%>/listRecords.do" class="cs-navi-tab">æºæ•°æ®æ—¶é—´æ®µæŸ¥è¯¢</a></p>
+						<p><a href="javascript:void(0);" src="<%=path%>/hangongChartNoQueryForAdmin.do" class="cs-navi-tab">æºæ•°æ®ç­‰è½´å›¾å·æŸ¥è¯¢</a></p>
+						<p><a href="javascript:void(0);" src="<%=path%>/file/uploadingFile.do" class="cs-navi-tab">ç„Šæ¥æ•°æ®æ–‡ä»¶ä¸Šä¼ </a></p>
+						<p><a href="javascript:void(0);" src="<%=path%>/file/uploadingHangongFile.do" class="cs-navi-tab">ç„Šå·¥ä¿¡æ¯æ–‡ä»¶ä¸Šä¼ </a></p>
+						<p><a href="javascript:void(0);" src="<%=path%>/setting/alertLimitSetting.do" class="cs-navi-tab">å‚æ•°è®¾å®š</a></p>
 					</div>
-					<div title="ÃÜÂëĞŞ¸Ä">
+					<div title="å¯†ç ä¿®æ”¹">
 						<p>
 							<a href="javascript:void(0);"
-								src="<%=path%>/userInforMaintain.do" class="cs-navi-tab">ÃÜÂëĞŞ¸Ä</a>
+								src="<%=path%>/userInforMaintain.do" class="cs-navi-tab">å¯†ç ä¿®æ”¹</a>
 						</p>
 					</div>
 				</authz:authorize>
@@ -307,7 +307,7 @@ $(function() {
 	</div>
 	<div id="mainPanle" region="center" border="true" border="false">
 		 <div id="tabs" class="easyui-tabs"  fit="true" border="false" >
-                <div title="Ö÷Ò³">
+                <div title="ä¸»é¡µ">
 				<div class="cs-home-remark" style="height:100%">
 					<iframe scrolling="auto" frameborder="0"  src="<%=path%>/weekAnalystic.do" style="width:100%;height:100%;"></iframe>
 					<h1></h1> <br>
@@ -315,13 +315,13 @@ $(function() {
 				</div>
         </div>
 	</div>
-	<div region="south" border="false" class="cs-south">ÌáÊ¾£ºÍÆ¼öÊ¹ÓÃChromeä¯ÀÀÆ÷£¬×îµÍ·Ö±æÂÊ1280*800£¬Çë°²×°flash²å¼ş</div>
+	<div region="south" border="false" class="cs-south">æç¤ºï¼šæ¨èä½¿ç”¨Chromeæµè§ˆå™¨ï¼Œæœ€ä½åˆ†è¾¨ç‡1280*800ï¼Œè¯·å®‰è£…flashæ’ä»¶</div>
 	<div id="mm" class="easyui-menu cs-tab-menu">
-		<div id="mm-tabupdate">Ë¢ĞÂ</div>
+		<div id="mm-tabupdate">åˆ·æ–°</div>
 		<div class="menu-sep"></div>
-		<div id="mm-tabclose">¹Ø±Õ</div>
-		<div id="mm-tabcloseother">¹Ø±ÕÆäËû</div>
-		<div id="mm-tabcloseall">¹Ø±ÕÈ«²¿</div>
+		<div id="mm-tabclose">å…³é—­</div>
+		<div id="mm-tabcloseother">å…³é—­å…¶ä»–</div>
+		<div id="mm-tabcloseall">å…³é—­å…¨éƒ¨</div>
 	</div>
 </body>
 </html>
