@@ -2,7 +2,7 @@
 <%@ taglib prefix="authz" uri="http://www.springframework.org/security/tags" %>
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=gbk">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <title>数据分析系统</title>
 <%
 	String path = request.getContextPath();
